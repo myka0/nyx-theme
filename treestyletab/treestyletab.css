@@ -1,0 +1,318 @@
+:root {
+  /* Color theming */
+  --gradient1: #B993D6; /* #7A7FBA #8badf4 #D0A5FF*/
+  --gradient2: #8CA6DB; /* #11C37C #ed8795 #ffc397*/
+  --gradient: linear-gradient(to right, #7A7FBA, #11C37C);
+
+  --dark-0: var(--ap-color-dp0);
+  --dark-base: #191818;
+  --dark-1: #2E2C2C;
+  --dark-2: var(--ap-color-dp1);
+  --dark-3: #2E2C2C;
+  --dark-4: var(--ap-color-dp3);
+  --light-0: #191818;
+  --light-base: var(--ap-color-dp10);
+  --light-1: var(--ap-color-dp9)
+  --light-2: var(--ap-color-dp8);
+  --light-3: var(--ap-color-dp6);
+  --light-4: #D0A5FF; /* var(--ap-color-dp5) */
+  --accent: var(--ap-primary);
+  --yellow: var(--ap-yellow);
+  --green: var(--ap-green);
+  --red: var(--ap-red);
+  /* --extension-icon-mask: grayscale(85%) invert(21%) sepia(0%) saturate(1166%) hue-rotate(166deg) brightness(95%) contrast(80%); */
+
+  /* --extension-icon-mask: grayscale(85%) invert(13%) sepia(80%) saturate(3107%) hue-rotate(256deg) brightness(84%) contrast(93%); */
+
+
+  /* General variables */
+  --tab-border-radius: 4px;
+  /* border radius of tabs */
+  --animation-duration: 250ms;
+  /* duration of different animations [0s: turn all animations off] */
+  --spacing: 10px;
+  /* spacing between tabs. [<15px: compact tabs] */
+  --distance-from-edge: 7px;
+  /* distance between tabs, and left-right edges of sidebar*/
+  --hover-text-spacing: 0.3;
+  /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
+  --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --collapsed-width: 60px;
+  --contextual-identity-color-blue: #63B3ED;
+  --contextual-identity-color-orange: #F6AD55;
+  --contextual-identity-color-green: #68D391;
+  --contextual-identity-color-pink: #F687B3;
+}
+
+
+#tabbar-container #tabbar {
+  margin-bottom: 10px !important;
+}
+
+:root,
+#background {
+  background: var(--dark-base) !important;
+}
+
+tab-item > * {
+  overflow: visible;
+}
+
+/* Regular tab styling */
+tab-item:not(.collapsed) {
+  /* margin-top: var(--spacing); */
+  /* border-radius: 0px var(--tab-border-radius) var(--tab-border-radius) 0px; */
+  border-radius: var(--tab-border-radius);
+  border: none !important;
+  height: 34px !important;
+  justify-content: center;
+}
+
+/* Collapsed tab height */
+tab-item.collapsed {
+  height: 28px;
+  padding: 0px !important;
+}
+
+/* Child tab styling */
+tab-item:not([data-level="0"]):not(.pinned) {
+  border-left: solid 3px var(--gradient1) !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 20px;
+  padding-left: 10px;
+  /* margin-top: calc(var(--spacing)/2); */
+}
+
+/* Icon */
+tab-item tab-favicon {
+  right: 2px;
+  filter: var(--extension-icon-mask);
+  transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
+}
+
+.highlighter {
+  display: none !important;
+}
+
+/* General tab */
+tab-item {
+  --tab-size: 32px !important;
+  margin: 4px;
+}
+tab-item tab-item-substance {
+  height: var(--tab-size);
+  padding: 8px 0px 8px 0px;
+}
+tab-item:not(.active) .label {
+  color: #EBEBDF;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  font-weight: 900;
+}
+
+/* Hover tab */
+tab-item:not(active):hover {
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+}
+tab-item:not(active):hover .label {
+	color: #191818 !important;
+    font-weight: 900;
+}
+
+/* Selected tab */
+tab-item.active {
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+  color: var(--dark-base) !important;
+  font-weight: 900;
+}
+
+/* Highlighted tabs */
+tab-item:not(.active).highlighted {
+  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+}
+tab-item:not(.active).highlighted .label {
+  color: var(--dark-base);
+  font-weight: 900;
+}
+
+/* Close button */
+tab-item:hover tab-closebox {
+  right: 10px;
+}
+tab-item:not(pinned) tab-closebox {
+  position: absolute;
+  margin-top: 2px;
+  height: 20px;
+  width: 20px;
+  right: -30px;
+  border-radius: 50%;
+  padding-top: 2px;
+  padding-left: 2px;
+  opacity: 1;
+  /* background: var(--light-4); */
+  transition: all var(--animation-duration) var(--ease-out);
+}
+tab-closebox:hover {
+  transition: background var(--animation-duration) var(--ease-out);
+  transform: scale(115%) !important;
+}
+
+/* Sound button */
+.sound-button:after {
+  background: var(--light-0) !important;
+  margin-right: 5px;
+}
+tab-item:not(active):hover .sound-button {
+  margin-right: 24px;
+  transition: all 0.4s var(--ease-out);
+}
+:root.left tab-item .sound-button:after {
+
+  transition: all calc(var(--animation-duration) * 2.2) var(--ease-out) !important;
+}
+:root.left tab-item:hover .sound-button:after {
+  transform: translateX(-4px);
+}
+
+/* Tab counter */
+.counter {
+  color: var(--light-1) !important;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 2px 0px;
+  font-weight: bold;
+  /* padding-bottom: 2px; */
+  order: -1 !important;
+}
+.counter:before,
+.counter:after {
+  content: "";
+}
+
+:root.left tab-item {
+  padding-left: 15px;
+}
+
+:root.left tab-item tab-favicon {
+  order: -1 !important;
+  transform: scale(120%) translateX(0px) !important;
+}
+
+:root.left tab-item .label {
+  transform: translateX(-12px);
+  margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
+  transition: all var(--animation-duration) var(--ease-out);
+}
+
+/* Twisty, drop-down ">" button */
+tab-item .twisty {
+  position: relative;
+  margin-right: 10px;
+  padding-left: 4px;
+  transform: scale(100%);
+  order: 0 !important;
+}
+tab-item .twisty:hover {
+  transform: scale(115%);
+}
+:root.left tab-item[data-child-ids] .twisty {
+  margin-left: 0px !important;
+}
+
+/* Hover animation */
+:root.left tab-item:not(.pinned):hover tab-favicon {
+  transform: scale(120%) translateX(8px) !important;
+}
+:root.left tab-item:not([data-child-ids]):hover .label {
+  transform: translateX(0px);
+}
+:root.left tab-item:hover .sound-button:after {
+  transform: translateX(0px);
+}
+:root.left tab-item[data-child-ids]:hover .twisty {
+  transform: translateX(8px);
+}
+
+.tab .favicon .favicon-default::before {
+  filter: var(--extension-icon-mask);
+  /* change for light theme */
+}
+
+.tab[data-current-favicon-uri=undefined] .favicon .favicon-default::before {
+  background: url("chrome://branding/content/identity-icons-brand.svg") no-repeat center !important;
+  mask: none !important;
+}
+
+/* New tab */
+.newtab-button-box {
+  border: none !important;
+  margin: 0 100px;
+}
+.newtab-button {
+  border: none !important;
+  border-radius: 4px;
+  padding: 5px 0 !important;
+  margin: 0 5px;
+}
+.newtab-button::before {
+  background: var(--light-3) !important;
+}
+.newtab-action-selector-anchor {
+  border: none !important;
+  margin-right: 10px;
+  margin-top: 3px;
+}
+.newtab-button:hover {
+  background: var(--dark-1);
+}
+
+/* Pinned tabs */
+tab-item.pinned {
+  margin: 5px !important;
+  padding: 0px !important;
+  transition: all 0.1s var(--ease-out);
+}
+
+/* Container Tabs */
+.contextual-identity-marker {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+tab-item.active .contextual-identity-marker {
+  display: none !important;
+}
+
+.contextual-identity-firefox-container-1:not(.active),
+.contextual-identity-firefox-container-2:not(.active),
+.contextual-identity-firefox-container-3:not(.active),
+.contextual-identity-firefox-container-4:not(.active) {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-1 {
+  background: linear-gradient(to right, #D53F8C, #9F7AEA) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-2 {
+  background: linear-gradient(to right, #DD6B20, #F56565) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-3 {
+  background: linear-gradient(to right, #38A169, #38B2AC) !important;
+}
+
+tab-item.active.contextual-identity-firefox-container-4 {
+  background: linear-gradient(to right, #3182CE, #0BC5EA) !important;
+}
+
+/***********************************/
+#all-tabs {
+  border: none !important;
+}

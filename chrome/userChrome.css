@@ -1,0 +1,40 @@
+@import url('components/onyx-urlbar.css');
+@import url('components/onyx-navbar.css');
+@import url('components/onyx-treestyletab.css');
+
+.browserStack>browser{
+    border-radius: 8px !important;
+    /* outline: 2px solid color-mix(in srgb, var(--auto-general-color) 50%, transparent) !important; */
+    /* outline: 1px solid red !important; */
+}
+
+#main-window{
+    /* background-color: color-mix(in srgb, var(--lwt-accent-color) 60%, transparent)  !important; */
+    /* background-color: color-mix(in srgb, var(--auto-accent-color) 90%, transparent)  !important; */
+    background-color: #1C1B22 !important;
+    /* appearance: -moz-win-borderless-glass !important;
+    appearance: -moz-win-glass !important; */
+    
+    
+}
+#tabbrowser-tabpanels {
+  background-color: transparent;
+  margin: 4px !important;
+  border-radius: 4px !important;
+  border-width: 1px !important;
+  border-color: #aaaaaa !important;
+  border-style: solid !important;
+}
+#navigator-toolbox {
+  /*background-color: transparent !important; */
+  border-radius: 4px !important;
+}
+#navigator-toolbox-background {
+  /* background-color: transparent !important; */
+}
+#appcontent, #browser, #tabbrowser-tabbox, #tabbrowser-tabpanels, .browserSidebarContainer {
+  background-color: transparent !important;
+}
+
+
+
