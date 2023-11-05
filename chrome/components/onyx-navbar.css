@@ -1,12 +1,12 @@
 #nav-bar {
-    border-radius: 0px !important;
+    border-radius: var(--border-radius) !important;
     background-color: #191818 !important;
 }
 
 #nav-bar, #PersonalToolbar {
-    border-radius: 4px !important;
+    border-radius: var(--border-radius) !important;
     margin: 4px 4px 0px 4px !important;
-    border-width: 1px !important;
-    border-color: #aaaaaa !important;
+    border-width: var(--border-width) !important;
+    border-color: var(--border-color) !important;
     border-style: solid !important;
 }

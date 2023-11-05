@@ -1,9 +1,10 @@
+@import url('onyx-root.css');
 @import url('components/onyx-urlbar.css');
 @import url('components/onyx-navbar.css');
 @import url('components/onyx-treestyletab.css');
 
 .browserStack>browser{
-    border-radius: 8px !important;
+    border-radius: var(--border-radius) !important;
     /* outline: 2px solid color-mix(in srgb, var(--auto-general-color) 50%, transparent) !important; */
     /* outline: 1px solid red !important; */
 }
@@ -20,14 +21,14 @@
 #tabbrowser-tabpanels {
   background-color: transparent;
   margin: 4px !important;
-  border-radius: 4px !important;
-  border-width: 1px !important;
-  border-color: #aaaaaa !important;
+  border-radius: var(--border-radius) !important;
+  border-width: var(--border-width) !important;
+  border-color: var(--border-color) !important;
   border-style: solid !important;
 }
 #navigator-toolbox {
-  /*background-color: transparent !important; */
-  border-radius: 4px !important;
+  /* background-color: transparent !important; */
+  border-radius: var(--border-radius) !important;
 }
 #navigator-toolbox-background {
   /* background-color: transparent !important; */

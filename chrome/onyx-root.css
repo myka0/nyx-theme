@@ -1,0 +1,30 @@
+/* General variables */
+:root {
+  --border-radius: 4px !important;
+  --margin: 4px !important;
+  --border-width: 1px !important;
+  
+  --thin-tab-width: 50px;
+  --wide-tab-width: 300px;
+  
+  --transition-time: 250ms !important;
+  --transition-delay: 75ms !important;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark){
+:root:is([brighttext]):-moz-lwtheme,
+:root[lwt-toolbar-field-focus-brighttext],
+:root:-moz-lwtheme{
+  --border-color: #aaaaaa !important;
+  }
+}
+
+/* White Theme */
+@media (prefers-color-scheme: light){
+:root:not([lwtheme-brighttext="true"]),
+:root:-moz-lwtheme{ 
+  --border-color: #191818 !important;
+  }
+}

@@ -1,7 +1,7 @@
 #urlbar {
     padding-left: 10px !important;
     padding-right: 10px !important;
-    border-radius: 4px !important;
+    border-radius: var(--border-radius) !important;
     background-color: #2E2C2C !important;
     /* border-width: 1px !important;
     border-color: #aaaaaa !important;
