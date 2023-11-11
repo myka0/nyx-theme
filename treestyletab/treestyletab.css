@@ -85,6 +85,9 @@ tab-item:not([data-level="0"]):not(.pinned) {
   padding-left: 10px;
   /* margin-top: calc(var(--spacing)/2); */
 }
+tab-item:not([data-level="0"]):not(.pinned):hover {
+  margin-left: 40px !important;
+}
 
 /* Icon */
 tab-item tab-favicon {
@@ -109,12 +112,13 @@ tab-item tab-item-substance {
 tab-item:not(.active) .label {
   color: #EBEBDF;
   padding-bottom: 2px;
-  padding-left: 8px;
+  padding-left: 0px;
   font-weight: 900;
 }
 
 /* Hover tab */
 tab-item:not(active):hover {
+  margin-left: 20px;
   background: linear-gradient(to right, var(--gradient1), var(--gradient2));
 }
 tab-item:not(active):hover .label {
@@ -181,7 +185,7 @@ tab-item:not(active):hover .sound-button {
 .counter {
   color: var(--light-1) !important;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: 20px;
   padding: 2px 0px;
   font-weight: bold;
   /* padding-bottom: 2px; */
@@ -202,7 +206,7 @@ tab-item:not(active):hover .sound-button {
 }
 
 :root.left tab-item .label {
-  transform: translateX(-12px);
+  /* transform: translateX(-12px); */
   margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
   transition: all var(--animation-duration) var(--ease-out);
 }
@@ -222,20 +226,7 @@ tab-item .twisty:hover {
   margin-left: 0px !important;
 }
 
-/* Hover animation */
-:root.left tab-item:not(.pinned):hover tab-favicon {
-  transform: scale(120%) translateX(8px) !important;
-}
-:root.left tab-item:not([data-child-ids]):hover .label {
-  transform: translateX(0px);
-}
-:root.left tab-item:hover .sound-button:after {
-  transform: translateX(0px);
-}
-:root.left tab-item[data-child-ids]:hover .twisty {
-  transform: translateX(8px);
-}
-
+/* Icon mask */
 .tab .favicon .favicon-default::before {
   filter: var(--extension-icon-mask);
   /* change for light theme */
