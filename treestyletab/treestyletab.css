@@ -65,7 +65,7 @@ tab-item:not(.collapsed) {
   /* margin-top: var(--spacing); */
   /* border-radius: 0px var(--tab-border-radius) var(--tab-border-radius) 0px; */
   border-radius: var(--tab-border-radius);
-  border: none !important;
+  border: 1px #444444 solid !important;
   height: 34px !important;
   justify-content: center;
 }
@@ -78,9 +78,6 @@ tab-item.collapsed {
 
 /* Child tab styling */
 tab-item:not([data-level="0"]):not(.pinned) {
-  border-left: solid 3px var(--gradient1) !important;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   margin-left: 20px;
   padding-left: 0px;
   /* margin-top: calc(var(--spacing)/2); */
@@ -141,26 +138,26 @@ tab-item:not(.active) .label {
 /* Hover tab */
 tab-item:not(active):hover {
   margin-left: 20px;
-  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+  border: 1px #EBEBDF solid !important;
 }
 tab-item:not(active):hover .label {
-	color: #191818 !important;
+	color: #EBEBDF !important;
     font-weight: 900;
 }
 
 /* Selected tab */
 tab-item.active {
-  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
-  color: var(--dark-base) !important;
+  border: 1px #EBEBDF solid !important;
+  color: #EBEBDF !important;
   font-weight: 900;
 }
 
 /* Highlighted tabs */
 tab-item:not(.active).highlighted {
-  background: linear-gradient(to right, var(--gradient1), var(--gradient2));
+  border: 1px #EBEBDF solid !important;
 }
 tab-item:not(.active).highlighted .label {
-  color: var(--dark-base);
+  color: var #EBEBDF;
   font-weight: 900;
 }
 
