@@ -104,11 +104,17 @@ tab-item tab-favicon {
 #tabbar:not(:hover) .tab {
   transition-delay: 0s;
   margin-left: 4px;
+  color: var(--dark-base);
+}
+#tabbar:not(:hover) .label {
+  transition-delay: 0s;
+  color: var(--dark-base);
 }
 #tabbar:not(:hover) .twisty {
   transition-delay: 0s;
   transition: 0.1s margin-top, 0.2s 0.1s margin-left, 0.2s 0.1s visibility;
-  margin-left: 20px;
+  margin-left: 10px;
+  visibility: hidden;
 }
 #tabbar .tab .twisty {
   transition: 0.2s margin;
@@ -117,6 +123,7 @@ tab-item tab-favicon {
 .highlighter {
   display: none !important;
 }
+
 
 /* General tab */
 tab-item {
@@ -235,6 +242,11 @@ tab-item:not(active):hover .sound-button {
   margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
   transition: all var(--animation-duration) var(--ease-out);
 }
+:root.left tab-item:hover .label {
+  /* transform: translateX(-12px); */
+  margin-right: 36px !important;
+  transition: all var(--animation-duration) var(--ease-out);
+}
 
 /* Twisty, drop-down ">" button */
 tab-item .twisty {
@@ -251,7 +263,6 @@ tab-item .twisty:hover {
 /* Icon mask */
 .tab .favicon .favicon-default::before {
   filter: var(--extension-icon-mask);
-  /* change for light theme */
 }
 
 .tab[data-current-favicon-uri=undefined] .favicon .favicon-default::before {
