@@ -69,6 +69,9 @@ tab-item:not(.collapsed) {
   height: 34px !important;
   justify-content: center;
 }
+tab-item:not(.collapsed) .twisty {
+
+}
 
 /* Collapsed tab height */
 tab-item.collapsed {
@@ -116,6 +119,11 @@ tab-item tab-favicon {
   margin-left: 10px;
   visibility: hidden;
 }
+#tabbar:not(:hover) .counter {
+  transition-delay: 0s;
+  transition: 0s margin-top, 0.2s 0.1s margin-left, 0.2s 0.1s visibility;
+  order: 10 !important;
+}
 #tabbar .tab .twisty {
   transition: 0.2s margin;
 }
@@ -123,7 +131,6 @@ tab-item tab-favicon {
 .highlighter {
   display: none !important;
 }
-
 
 /* General tab */
 tab-item {
@@ -135,7 +142,7 @@ tab-item tab-item-substance {
   width: 300px;
   padding: 10px 0px 10px 0px;
 }
-tab-item:not(.active) .label {
+tab-item:not(active) .label {
   color: #EBEBDF;
   padding-bottom: 2px;
   padding-left: 0px;
@@ -148,8 +155,8 @@ tab-item:not(active):hover {
   border: 1px #EBEBDF solid !important;
 }
 tab-item:not(active):hover .label {
-	color: #EBEBDF !important;
-    font-weight: 900;
+  color: #EBEBDF !important;
+  font-weight: 900;
 }
 
 /* Selected tab */
@@ -160,10 +167,10 @@ tab-item.active {
 }
 
 /* Highlighted tabs */
-tab-item:not(.active).highlighted {
+tab-item:not(active).highlighted {
   border: 1px #EBEBDF solid !important;
 }
-tab-item:not(.active).highlighted .label {
+tab-item:not(active).highlighted .label {
   color: var #EBEBDF;
   font-weight: 900;
 }
@@ -211,8 +218,9 @@ tab-item:not(active):hover .sound-button {
 .counter {
   color: var(--light-1) !important;
   border-radius: 4px;
-  margin-left: 16px;
-  padding: 4px 0px 4px 4px;
+  margin-left: 4px;
+  margin-right: -8px;
+  padding: 4px 4px 4px 4px;
   font-weight: 900;
   /* padding-bottom: 2px; */
   order: -1 !important;
@@ -224,8 +232,11 @@ tab-item:not(active):hover .sound-button {
 }
 :root.left tab-item:hover .counter {
   background: transparent;
-  color: #191818 !important;
+  color: #EBEBDF !important;
   font-weight: 900;
+}
+tab-item:not([data-level="0"]):not(.pinned) .counter {
+  padding-left: 8px !important;
 }
 
 :root.left tab-item {
@@ -251,13 +262,16 @@ tab-item:not(active):hover .sound-button {
 /* Twisty, drop-down ">" button */
 tab-item .twisty {
   position: relative;
-  margin-right: 4px;
+  margin-right: 8px;
   padding-left: 4px;
   transform: scale(100%);
   order: 0 !important;
+  transform: scale(1.5);
+
 }
 tab-item .twisty:hover {
-  transform: scale(115%);
+  transform: scale(1.7);
+  padding-left: 3px;
 }
 
 /* Icon mask */
