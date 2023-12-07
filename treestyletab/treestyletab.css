@@ -69,9 +69,6 @@ tab-item:not(.collapsed) {
   height: 34px !important;
   justify-content: center;
 }
-tab-item:not(.collapsed) .twisty {
-
-}
 
 /* Collapsed tab height */
 tab-item.collapsed {
@@ -86,7 +83,7 @@ tab-item:not([data-level="0"]):not(.pinned) {
   /* margin-top: calc(var(--spacing)/2); */
 }
 tab-item:not([data-level="0"]):not(.pinned):hover {
-  margin-left: 40px !important;
+  margin-left: 36px !important;
 }
 tab-item:not([data-level="0"]):not(.pinned) :not(#sidebar:hover) {
   margin-left: 0px !important;
@@ -94,10 +91,14 @@ tab-item:not([data-level="0"]):not(.pinned) :not(#sidebar:hover) {
 
 /* Icon */
 tab-item tab-favicon {
-  right: 0px;
+  left: 0px;
   margin-right: 0px;
   filter: var(--extension-icon-mask);
   transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
+}
+:root.left tab-item tab-favicon {
+  order: -1 !important;
+  transform: scale(120%) translateX(0px) !important;
 }
 
 /* Reveal animation */
@@ -147,6 +148,9 @@ tab-item:not(active) .label {
   padding-bottom: 2px;
   padding-left: 0px;
   font-weight: 900;
+}
+:root.left tab-item {
+  padding-left: 12px;
 }
 
 /* Hover tab */
@@ -215,6 +219,7 @@ tab-item:not(active):hover .sound-button {
 }
 
 /* Tab counter */
+/*
 .counter {
   color: var(--light-1) !important;
   border-radius: 4px;
@@ -222,9 +227,7 @@ tab-item:not(active):hover .sound-button {
   margin-right: -8px;
   padding: 4px 4px 4px 4px;
   font-weight: 900;
-  /* padding-bottom: 2px; */
   order: -1 !important;
-  /* background: #3E3E3E; */
 }
 .counter:before,
 .counter:after {
@@ -238,14 +241,9 @@ tab-item:not(active):hover .sound-button {
 tab-item:not([data-level="0"]):not(.pinned) .counter {
   padding-left: 8px !important;
 }
-
-:root.left tab-item {
-  padding-left: 12px;
-}
-
-:root.left tab-item tab-favicon {
-  order: -1 !important;
-  transform: scale(120%) translateX(0px) !important;
+*/
+.counter {
+  display: none;
 }
 
 :root.left tab-item .label {
@@ -260,18 +258,20 @@ tab-item:not([data-level="0"]):not(.pinned) .counter {
 }
 
 /* Twisty, drop-down ">" button */
-tab-item .twisty {
+.twisty {
   position: relative;
   margin-right: 8px;
-  padding-left: 4px;
+  padding-left: 0px;
   transform: scale(100%);
   order: 0 !important;
-  transform: scale(1.5);
-
+  transform: scale(1);
 }
-tab-item .twisty:hover {
-  transform: scale(1.7);
-  padding-left: 3px;
+.twisty:hover {
+  transform: scale(1.2);
+}
+.twisty:before {
+  padding-left: 10px !important;
+
 }
 
 /* Icon mask */
